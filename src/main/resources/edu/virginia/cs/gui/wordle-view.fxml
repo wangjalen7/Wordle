@@ -9,7 +9,7 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <HBox prefHeight="100.0" prefWidth="1022.0">
+   <HBox prefHeight="87.0" prefWidth="738.0">
       <children>
          <Label alignment="CENTER" prefHeight="109.0" prefWidth="118.0" style="-fx-border-color: black;">
             <font>
@@ -20,4 +20,6 @@
    </HBox>
 
           <Label fx:id="welcomeText" prefHeight="17.0" prefWidth="0.0" />
+   <Button mnemonicParsing="false" prefHeight="1.0" prefWidth="49.0" text="Check" />
+   <TextField prefHeight="0.0" prefWidth="77.0" />
 </VBox>
