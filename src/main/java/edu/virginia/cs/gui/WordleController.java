@@ -1,18 +1,23 @@
 package edu.virginia.cs.gui;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 import java.security.Key;
 
 public class WordleController {
 
     public Label playAgain;
-    public Button checkButton;
+    @FXML
+    private Button checkButton;
     public Button yesButton;
     public Button noButton;
 
@@ -20,11 +25,15 @@ public class WordleController {
 
     private int tindex = 0;
 
+    private String[] line_word = new String[5];
+
     private int[] arr = new int[]{6,1,5,2,3};
     @FXML
     private VBox root;
 
     private HBox h;
+
+
     @FXML
     private TextField word;
     @FXML
@@ -103,8 +112,14 @@ public class WordleController {
             System.out.println(event.getCode() + " " + root.getChildren().get(1));
             h = (HBox) root.getChildren().get(hindex);
                 word = (TextField) h.getChildren().get(tindex);
-                word.setText(event.getCharacter());
+                word.setText(event.getText());
+                word.setStyle("text-area-background: green;");
                 if(tindex == 4){
+                    for(int i = 0;i<h.getChildren().size();i++) {
+                        word = (TextField) h.getChildren().get(i);
+                        line_word[i] = word.getText();
+                        word.setDisable(true);
+                    }
                     hindex++;
                     tindex = 0;
                 }
@@ -116,7 +131,7 @@ public class WordleController {
         }
         if(event.getCode().equals(KeyCode.BACK_SPACE)){
             System.out.println(event.getCode() + " Back");
-            h = (HBox) root.getChildren().get(arr[hindex]);
+            h = (HBox) root.getChildren().get(hindex);
                 word = (TextField) h.getChildren().get(tindex);
                 word.clear();
         }
@@ -129,6 +144,9 @@ public class WordleController {
                 tindex--;
                 word = (TextField) h.getChildren().get(tindex);
             }
+            h = (HBox) root.getChildren().get(hindex);
+            word = (TextField) h.getChildren().get(tindex);
+            word.requestFocus();
         }
 
         if(event.getCode().equals(KeyCode.RIGHT)){
@@ -139,6 +157,9 @@ public class WordleController {
                 tindex++;
                 word = (TextField) h.getChildren().get(tindex);
             }
+            h = (HBox) root.getChildren().get(hindex);
+            word = (TextField) h.getChildren().get(tindex);
+            word.requestFocus();
         }
     }
 
