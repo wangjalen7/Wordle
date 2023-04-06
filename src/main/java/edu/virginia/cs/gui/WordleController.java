@@ -103,4 +103,17 @@ public class WordleController {
                     tindex++;
         }
     }
+
+    @FXML
+    protected void handleYesButton() {
+    }
+
+    @FXML
+    protected void handleNoButton() {
+
+    }
 }
+
+
+
+
