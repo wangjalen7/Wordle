@@ -1,8 +1,11 @@
 package edu.virginia.cs.gui;
 
+import edu.virginia.cs.wordle.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -90,6 +93,7 @@ public class WordleController {
     @FXML
     private Label label44 = new Label();
 
+    Wordle wordle = new WordleImplementation();
 
 
     @FXML
@@ -143,14 +147,24 @@ public class WordleController {
     }
 
     @FXML
+    protected void gameOver(){
+        if(wordle.isGameOver()){
+            playAgain.setVisible(true);
+            yesButton.setVisible(true);
+            noButton.setVisible(true);
+
+
+        }
+    }
+
+    @FXML
     protected void handleYesButton() {
     }
 
     @FXML
     protected void handleNoButton() {
 
-    }
-}
+    }}
 
 
 

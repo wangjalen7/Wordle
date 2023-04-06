@@ -48,20 +48,32 @@
       <children>
          <TextField fx:id="text16" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
          <TextField fx:id="text17" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
+         <TextField fx:id="text18" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
          <TextField fx:id="text19" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
          <TextField fx:id="text20" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
-         <TextField fx:id="text21" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
       </children>
    </HBox>
    <HBox fx:id="word4" prefHeight="100.0" prefWidth="200.0">
       <children>
+         <TextField fx:id="text21" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
          <TextField fx:id="text22" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
          <TextField fx:id="text23" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
          <TextField fx:id="text24" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
          <TextField fx:id="text25" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
-         <TextField fx:id="text18" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
       </children>
    </HBox>
-   <Label prefHeight="17.0" prefWidth="665.0" />
-   <Button fx:id="check" mnemonicParsing="false" prefHeight="43.0" prefWidth="52.0" text="check" />
+   <HBox fx:id="word5" prefHeight="100.0" prefWidth="200.0">
+      <children>
+          <TextField fx:id="text26" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
+          <TextField fx:id="text27" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
+          <TextField fx:id="text28" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
+          <TextField fx:id="text29" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
+          <TextField fx:id="text30" alignment="CENTER" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" onKeyPressed="#onButtonPressed"/>
+      </children>
+   </HBox>
+    <Label prefHeight="17.0" prefWidth="665.0"/>
+    <Button fx:id="checkButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="52.0" text="check"/>
+    <Label id="play_again" fx:id="playAgain" text="Play Again?" visible="false" />
+    <Button id="play_again" fx:id="yesButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleYesButton" text="Yes" visible="false" />
+    <Button id="play_again" fx:id="noButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleNoButton" text="No" visible="false" />
 </VBox>
