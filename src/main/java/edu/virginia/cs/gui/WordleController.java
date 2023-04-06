@@ -3,11 +3,22 @@ package edu.virginia.cs.gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public class WordleController {
+
+    private int hindex = 0;
+
+    private int tindex = 0;
+
     @FXML
-    private TextField word = new TextField();
+    private VBox root;
+
+    private HBox h;
+    @FXML
+    private TextField word;
     @FXML
     private HBox word0= new HBox();
     @FXML
@@ -21,63 +32,75 @@ public class WordleController {
     @FXML
     private Label welcomeText;
     @FXML
-    private TextField text1 = new TextField();
+    private Label label00 = new Label();
     @FXML
-    private TextField text2 = new TextField();
+    private Label label01 = new Label();
     @FXML
-    private TextField text3 = new TextField();
+    private Label label02 = new Label();
     @FXML
-    private TextField text4 = new TextField();
+    private Label label03 = new Label();
     @FXML
-    private TextField text5 = new TextField();
+    private Label label04 = new Label();
     @FXML
-    private TextField text6 = new TextField();
+    private Label label10 = new Label();
     @FXML
-    private TextField text7 = new TextField();
+    private Label label11 = new Label();
     @FXML
-    private TextField text8 = new TextField();
+    private Label label12 = new Label();
     @FXML
-    private TextField text9 = new TextField();
+    private Label label13 = new Label();
     @FXML
-    private TextField text10 = new TextField();
+    private Label label14 = new Label();
     @FXML
-    private TextField text11 = new TextField();
+    private Label label20 = new Label();
     @FXML
-    private TextField text12 = new TextField();
+    private Label label21 = new Label();
     @FXML
-    private TextField text13 = new TextField();
+    private Label label22 = new Label();
     @FXML
-    private TextField text14 = new TextField();
+    private Label label23 = new Label();
     @FXML
-    private TextField text15 = new TextField();
+    private Label label24 = new Label();
     @FXML
-    private TextField text16 = new TextField();
+    private Label label30 = new Label();
     @FXML
-    private TextField text17 = new TextField();
+    private Label label31 = new Label();
     @FXML
-    private TextField text18 = new TextField();
+    private Label label32 = new Label();
     @FXML
-    private TextField text19 = new TextField();
+    private Label label33 = new Label();
     @FXML
-    private TextField text20 = new TextField();
+    private Label label34 = new Label();
     @FXML
-    private TextField text21 = new TextField();
+    private Label label40 = new Label();
     @FXML
-    private TextField text22 = new TextField();
+    private Label label41 = new Label();
     @FXML
-    private TextField text23 = new TextField();
+    private Label label42 = new Label();
     @FXML
-    private TextField text24 = new TextField();
+    private Label label43 = new Label();
     @FXML
-    private TextField text25 = new TextField();
-    @FXML
-    private Label message = new Label();
+    private Label label44 = new Label();
 
 
 
     @FXML
     protected void onHelloButtonClick() {
         String guess = word.getText();
+    }
 
+    @FXML
+    protected void onButtonPressed(KeyEvent event){
+        if(event.getEventType().equals(KeyEvent.KEY_PRESSED)){
+                h = (HBox) root.getChildren().get(hindex);
+                word = (TextField) h.getChildren().get(tindex);
+                word.setText(event.getCharacter());
+                if(tindex == 4){
+                    hindex++;
+                    tindex = 0;
+                }
+                else
+                    tindex++;
+        }
     }
 }
