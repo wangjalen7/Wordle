@@ -3,16 +3,20 @@ package edu.virginia.cs.gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.security.Key;
+
 public class WordleController {
 
-    private int hindex = 0;
+    private int hindex = 1;
 
     private int tindex = 0;
 
+    private int[] arr = new int[]{6,1,5,2,3};
     @FXML
     private VBox root;
 
@@ -91,8 +95,9 @@ public class WordleController {
 
     @FXML
     protected void onButtonPressed(KeyEvent event){
-        if(event.getEventType().equals(KeyEvent.KEY_PRESSED)){
-                h = (HBox) root.getChildren().get(hindex);
+        if(event.getCode().isLetterKey()){
+            System.out.println(event.getCode() + " " + root.getChildren().get(1));
+            h = (HBox) root.getChildren().get(hindex);
                 word = (TextField) h.getChildren().get(tindex);
                 word.setText(event.getCharacter());
                 if(tindex == 4){
@@ -101,6 +106,37 @@ public class WordleController {
                 }
                 else
                     tindex++;
+            h = (HBox) root.getChildren().get(hindex);
+            word = (TextField) h.getChildren().get(tindex);
+            word.requestFocus();
+        }
+        if(event.getCode().equals(KeyCode.BACK_SPACE)){
+            System.out.println(event.getCode() + " Back");
+            h = (HBox) root.getChildren().get(arr[hindex]);
+                word = (TextField) h.getChildren().get(tindex);
+                word.clear();
+        }
+
+        if(event.getCode().equals(KeyCode.LEFT)){
+            System.out.println(event.getCode() + " Left");
+
+            h = (HBox) root.getChildren().get(arr[hindex]);
+            if(tindex > 0){
+                tindex--;
+                word = (TextField) h.getChildren().get(tindex);
+            }
+        }
+
+        if(event.getCode().equals(KeyCode.RIGHT)){
+            System.out.println(event.getCode() + " Right");
+
+            h = (HBox) root.getChildren().get(arr[hindex]);
+            if(tindex < 4){
+                tindex++;
+                word = (TextField) h.getChildren().get(tindex);
+            }
         }
     }
+
+
 }
