@@ -75,6 +75,6 @@ public class WordleController {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        String guess = word.getText();
     }
 }
