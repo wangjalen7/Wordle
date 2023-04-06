@@ -30,6 +30,47 @@ public class WordleController {
     private Label label03 = new Label();
     @FXML
     private Label label04 = new Label();
+    @FXML
+    private Label label10 = new Label();
+    @FXML
+    private Label label11 = new Label();
+    @FXML
+    private Label label12 = new Label();
+    @FXML
+    private Label label13 = new Label();
+    @FXML
+    private Label label14 = new Label();
+    @FXML
+    private Label label20 = new Label();
+    @FXML
+    private Label label21 = new Label();
+    @FXML
+    private Label label22 = new Label();
+    @FXML
+    private Label label23 = new Label();
+    @FXML
+    private Label label24 = new Label();
+    @FXML
+    private Label label30 = new Label();
+    @FXML
+    private Label label31 = new Label();
+    @FXML
+    private Label label32 = new Label();
+    @FXML
+    private Label label33 = new Label();
+    @FXML
+    private Label label34 = new Label();
+    @FXML
+    private Label label40 = new Label();
+    @FXML
+    private Label label41 = new Label();
+    @FXML
+    private Label label42 = new Label();
+    @FXML
+    private Label label43 = new Label();
+    @FXML
+    private Label label44 = new Label();
+
 
 
     @FXML
