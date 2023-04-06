@@ -16,6 +16,7 @@ public class WordleApplication extends Application {
         stage.setTitle("Wordle!");
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {
