@@ -1,6 +1,7 @@
 package edu.virginia.cs.gui;
 
 import edu.virginia.cs.wordle.GuessResult;
+import edu.virginia.cs.wordle.LetterResult;
 import edu.virginia.cs.wordle.WordleImplementation;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -106,8 +107,20 @@ public class WordleController {
     @FXML
     protected void onHelloButtonClick() {
         String guess = word.getText();
-        wordle.submitGuess(guess);
-
+        LetterResult[] answer = wordle.submitGuess(guess);
+        HBox hbox = (HBox) root.getChildren().get(hindex);
+        for(int i = 0; i < answer.length; i++){
+            TextField text =(TextField).getChildren.get(i);
+            if(answer[i].equals(LetterResult.GREEN)){
+                text.setStyle("text-area-background: green;");
+            }
+           else if(answer[i].equals(LetterResult.YELLOW)){
+                text.setStyle("text-area-background: yellow;");
+            }
+            else{
+                text.setStyle("text-area-background: grey;");
+            }
+        }
     }
 
     @FXML
