@@ -112,57 +112,48 @@ public class WordleController {
     @FXML
     protected void onButtonPressed(KeyEvent event){
         if(event.getCode().isLetterKey()){
-            System.out.println(event.getCode() + " " + root.getChildren().get(1));
+            //System.out.println(event.getCode() + " " + root.getChildren().get(1));
             h = (HBox) root.getChildren().get(hindex);
                 word = (TextField) h.getChildren().get(tindex);
                 word.setText(event.getText());
                 word.setStyle("text-area-background: green;");
-                if(tindex == 4){
-                    for(int i = 0;i<h.getChildren().size();i++) {
-                        word = (TextField) h.getChildren().get(i);
-                        line_word[i] = word.getText();
-                        word.setDisable(true);
-                    }
-                    hindex++;
-                    tindex = 0;
-                }
-                else
+                if(tindex < 4)
                     tindex++;
             h = (HBox) root.getChildren().get(hindex);
             word = (TextField) h.getChildren().get(tindex);
+
             word.requestFocus();
+            word.clear();
         }
         if(event.getCode().equals(KeyCode.BACK_SPACE)){
-            System.out.println(event.getCode() + " Back");
+            //System.out.println(event.getCode() + " Back");
             h = (HBox) root.getChildren().get(hindex);
                 word = (TextField) h.getChildren().get(tindex);
                 word.clear();
-        }
-
-        if(event.getCode().equals(KeyCode.LEFT)){
-            System.out.println(event.getCode() + " Left");
-
-            h = (HBox) root.getChildren().get(arr[hindex]);
             if(tindex > 0){
                 tindex--;
                 word = (TextField) h.getChildren().get(tindex);
             }
-            h = (HBox) root.getChildren().get(hindex);
-            word = (TextField) h.getChildren().get(tindex);
             word.requestFocus();
         }
 
-        if(event.getCode().equals(KeyCode.RIGHT)){
-            System.out.println(event.getCode() + " Right");
 
-            h = (HBox) root.getChildren().get(arr[hindex]);
-            if(tindex < 4){
-                tindex++;
-                word = (TextField) h.getChildren().get(tindex);
-            }
+        if(event.getCode().equals(KeyCode.ENTER)){
             h = (HBox) root.getChildren().get(hindex);
-            word = (TextField) h.getChildren().get(tindex);
-            word.requestFocus();
+            if(tindex == 4){
+                for(int i = 0;i<h.getChildren().size();i++) {
+                    word = (TextField) h.getChildren().get(i);
+                    line_word[i] = word.getText();
+                    word.setDisable(true);
+                }
+                hindex++;
+                tindex = 0;
+                h = (HBox) root.getChildren().get(hindex);
+                word = (TextField) h.getChildren().get(tindex);
+
+                word.requestFocus();
+                word.clear();
+            }
         }
     }
 
