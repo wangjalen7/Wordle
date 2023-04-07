@@ -127,7 +127,7 @@ public class WordleController {
     protected void onButtonPressed(KeyEvent event){
         if(event.getCode().isLetterKey()){
             System.out.println(event.getCode() + " " + root.getChildren().get(1));
-            h = (HBox) root.getChildren().get(hindex);
+            HBox h = (HBox) root.getChildren().get(hindex);
                 word = (TextField) h.getChildren().get(tindex);
                 word.setText(event.getText());
                 word.setStyle("text-area-background: green;");
@@ -148,7 +148,7 @@ public class WordleController {
         }
         if(event.getCode().equals(KeyCode.BACK_SPACE)){
             System.out.println(event.getCode() + " Back");
-            h = (HBox) root.getChildren().get(hindex);
+            HBox h = (HBox) root.getChildren().get(hindex);
                 word = (TextField) h.getChildren().get(tindex);
                 word.clear();
         }
@@ -156,7 +156,7 @@ public class WordleController {
         if(event.getCode().equals(KeyCode.LEFT)){
             System.out.println(event.getCode() + " Left");
 
-            h = (HBox) root.getChildren().get(arr[hindex]);
+            HBox h = (HBox) root.getChildren().get(arr[hindex]);
             if(tindex > 0){
                 tindex--;
                 word = (TextField) h.getChildren().get(tindex);
@@ -169,7 +169,7 @@ public class WordleController {
         if(event.getCode().equals(KeyCode.RIGHT)){
             System.out.println(event.getCode() + " Right");
 
-            h = (HBox) root.getChildren().get(arr[hindex]);
+            HBox h = (HBox) root.getChildren().get(arr[hindex]);
             if(tindex < 4){
                 tindex++;
                 word = (TextField) h.getChildren().get(tindex);
