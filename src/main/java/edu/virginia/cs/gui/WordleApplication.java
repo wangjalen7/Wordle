@@ -1,5 +1,6 @@
 package edu.virginia.cs.gui;
 
+import edu.virginia.cs.wordle.WordleImplementation;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,6 +10,7 @@ import java.io.IOException;
 
 public class WordleApplication extends Application {
     Stage stage = new Stage();
+    WordleImplementation implementation = new WordleImplementation();
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(WordleApplication.class.getResource("wordle-view.fxml"));
