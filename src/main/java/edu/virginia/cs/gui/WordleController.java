@@ -1,9 +1,6 @@
 package edu.virginia.cs.gui;
 
-import edu.virginia.cs.wordle.GuessResult;
-import edu.virginia.cs.wordle.IllegalWordException;
-import edu.virginia.cs.wordle.LetterResult;
-import edu.virginia.cs.wordle.WordleImplementation;
+import edu.virginia.cs.wordle.*;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -23,8 +20,8 @@ import java.security.Key;
 
 public class WordleController {
 
-    public WordleImplementation game = new WordleImplementation();
-    public WordleImplementation wordle = new WordleImplementation();
+    public Wordle game = new WordleImplementation();
+    public Wordle wordle = new WordleImplementation();
     GuessResult result = new GuessResult();
     @FXML
     public Label playAgain = new Label() ;
@@ -41,7 +38,7 @@ public class WordleController {
 
     private int[] arr = new int[]{6,1,5,2,3};
 
-    private LetterResult[] result = new LetterResult[5];
+    private LetterResult[] lresult = new LetterResult[5];
     @FXML
     private VBox root = new VBox();
 
@@ -115,8 +112,6 @@ public class WordleController {
     @FXML
     private Label message = new Label();
 
-    Wordle wordle = new WordleImplementation();
-
 
     @FXML
     protected void onHelloButtonClick() {
@@ -160,10 +155,10 @@ public class WordleController {
                     line_word += word.getText();
                 }
                 try {
-                    LetterResult[] result = game.submitGuess(line_word);
+                    LetterResult[] lresult = game.submitGuess(line_word);
                     for(int i = 0;i<h.getChildren().size();i++) {
                         word = (TextField) h.getChildren().get(i);
-                        word.setBackground(new Background(new BackgroundFill(getColor(result[i]), CornerRadii.EMPTY, Insets.EMPTY)));
+                        word.setBackground(new Background(new BackgroundFill(getColor(lresult[i]), CornerRadii.EMPTY, Insets.EMPTY)));
                         word.setDisable(true);
                     }
                     hindex++;
