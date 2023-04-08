@@ -140,14 +140,11 @@ public class WordleController {
         if(event.getCode().isLetterKey()){
             //System.out.println(event.getCode() + " " + root.getChildren().get(1));
             h = (HBox) root.getChildren().get(hindex);
-                word = (TextField) h.getChildren().get(tindex);
-                word.setText(event.getText());
-                word.setStyle("text-area-background: green;");
-                if(tindex < 4)
-                    tindex++;
-            h = (HBox) root.getChildren().get(hindex);
             word = (TextField) h.getChildren().get(tindex);
-
+            word.setText(event.getText());
+            word.setStyle("text-area-background: green;");
+            if(tindex < 4)
+                tindex++;
             word.requestFocus();
             word.clear();
         }
@@ -162,18 +159,16 @@ public class WordleController {
             }
             word.requestFocus();
         }
-
-
         if(event.getCode().equals(KeyCode.ENTER)){
             h = (HBox) root.getChildren().get(hindex);
-            if(tindex == 4){
-                for(int i = 0;i<h.getChildren().size();i++) {
+            if(tindex == 4) {
+                for (int i = 0; i < h.getChildren().size(); i++) {
                     word = (TextField) h.getChildren().get(i);
                     line_word += word.getText();
                 }
                 try {
                     LetterResult[] result = game.submitGuess(line_word);
-                    for(int i = 0;i<h.getChildren().size();i++) {
+                    for (int i = 0; i < h.getChildren().size(); i++) {
                         word = (TextField) h.getChildren().get(i);
                         word.setStyle("-fx-text-fill: white");
                         word.setBackground(new Background(new BackgroundFill(getColor(result[i]), CornerRadii.EMPTY, Insets.EMPTY)));
@@ -184,18 +179,13 @@ public class WordleController {
                     tindex = 0;
                     h = (HBox) root.getChildren().get(hindex);
                     word = (TextField) h.getChildren().get(tindex);
-
                     word.requestFocus();
                     word.clear();
                     line_word = "";
-                }
-                catch (IllegalWordException e){
+                } catch (IllegalWordException e) {
                     message.setText(e.getMessage());
                 }
-
             }
-
-
         }
     }
 
