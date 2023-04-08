@@ -9,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -26,7 +25,7 @@ public class WordleController {
 
     public WordleImplementation game = new WordleImplementation();
     public WordleImplementation wordle = new WordleImplementation();
-    GuessResult result = new GuessResult();
+
     @FXML
     public Label playAgain = new Label() ;
     @FXML
@@ -176,6 +175,7 @@ public class WordleController {
                     LetterResult[] result = game.submitGuess(line_word);
                     for(int i = 0;i<h.getChildren().size();i++) {
                         word = (TextField) h.getChildren().get(i);
+                        word.setStyle("-fx-text-fill: white");
                         word.setBackground(new Background(new BackgroundFill(getColor(result[i]), CornerRadii.EMPTY, Insets.EMPTY)));
                         word.setDisable(true);
                     }
