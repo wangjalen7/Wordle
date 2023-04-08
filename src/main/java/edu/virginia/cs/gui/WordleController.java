@@ -2,21 +2,21 @@ package edu.virginia.cs.gui;
 
 import edu.virginia.cs.wordle.*;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
 import java.security.Key;
 
 public class WordleController {
 
+    public WordleImplementation game = new WordleImplementation();
     public Label playAgain;
     @FXML
     private Button checkButton;
@@ -27,9 +27,11 @@ public class WordleController {
 
     private int tindex = 0;
 
-    private String[] line_word = new String[5];
+    private String line_word = "";
 
     private int[] arr = new int[]{6,1,5,2,3};
+
+    private LetterResult[] result = new LetterResult[5];
     @FXML
     private VBox root;
 
@@ -143,17 +145,31 @@ public class WordleController {
             if(tindex == 4){
                 for(int i = 0;i<h.getChildren().size();i++) {
                     word = (TextField) h.getChildren().get(i);
-                    line_word[i] = word.getText();
-                    word.setDisable(true);
+                    line_word += word.getText();
                 }
-                hindex++;
-                tindex = 0;
-                h = (HBox) root.getChildren().get(hindex);
-                word = (TextField) h.getChildren().get(tindex);
+                try {
+                    result = game.submitGuess(line_word);
+                    for(int i = 0;i<h.getChildren().size();i++) {
+                        word = (TextField) h.getChildren().get(i);
+                        word.setBackground(new Background(new BackgroundFill(getColor(result[i]), CornerRadii.EMPTY, Insets.EMPTY)));
+                        word.setDisable(true);
+                    }
+                    hindex++;
+                    tindex = 0;
+                    h = (HBox) root.getChildren().get(hindex);
+                    word = (TextField) h.getChildren().get(tindex);
 
-                word.requestFocus();
-                word.clear();
+                    word.requestFocus();
+                    word.clear();
+                    line_word = "";
+                }
+                catch (IllegalWordException e){
+
+                }
+
             }
+
+
         }
     }
 
@@ -175,7 +191,19 @@ public class WordleController {
     @FXML
     protected void handleNoButton() {
 
-    }}
+    }
+
+    protected Color getColor(LetterResult lr) {
+        if(lr.equals(LetterResult.GRAY))
+            return Color.GRAY;
+        if(lr.equals(LetterResult.YELLOW))
+            return Color.YELLOW;
+        else
+            return Color.GREEN;
+    }
+}
+
+
 
 
 
