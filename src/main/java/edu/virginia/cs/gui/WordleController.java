@@ -1,6 +1,9 @@
 package edu.virginia.cs.gui;
 
-import edu.virginia.cs.wordle.*;
+import edu.virginia.cs.wordle.GuessResult;
+import edu.virginia.cs.wordle.IllegalWordException;
+import edu.virginia.cs.wordle.LetterResult;
+import edu.virginia.cs.wordle.WordleImplementation;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -9,19 +12,26 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import java.lang.Exception;
 
 import java.security.Key;
 
 public class WordleController {
 
     public WordleImplementation game = new WordleImplementation();
-    public Label playAgain;
+    public WordleImplementation wordle = new WordleImplementation();
+    GuessResult result = new GuessResult();
     @FXML
-    private Button checkButton;
-    public Button yesButton;
-    public Button noButton;
+    public Label playAgain = new Label() ;
+    @FXML
+    private Button checkButton = new Button();
+    public Button yesButton = new Button();
+    public Button noButton = new Button();
 
     private int hindex = 1;
 
@@ -33,13 +43,13 @@ public class WordleController {
 
     private LetterResult[] result = new LetterResult[5];
     @FXML
-    private VBox root;
+    private VBox root = new VBox();
 
-    private HBox h;
+    private HBox h = new HBox();
 
 
     @FXML
-    private TextField word;
+    private TextField word = new TextField();
     @FXML
     private HBox word0= new HBox();
     @FXML
@@ -53,55 +63,57 @@ public class WordleController {
     @FXML
     private Label welcomeText;
     @FXML
-    private Label label00 = new Label();
+    private TextField text1 = new TextField();
     @FXML
-    private Label label01 = new Label();
+    private TextField text2 = new TextField();
     @FXML
-    private Label label02 = new Label();
+    private TextField text3 = new TextField();
     @FXML
-    private Label label03 = new Label();
+    private TextField text4 = new TextField();
     @FXML
-    private Label label04 = new Label();
+    private TextField text5 = new TextField();
     @FXML
-    private Label label10 = new Label();
+    private TextField text6 = new TextField();
     @FXML
-    private Label label11 = new Label();
+    private TextField text7 = new TextField();
     @FXML
-    private Label label12 = new Label();
+    private TextField text8 = new TextField();
     @FXML
-    private Label label13 = new Label();
+    private TextField text9 = new TextField();
     @FXML
-    private Label label14 = new Label();
+    private TextField text10 = new TextField();
     @FXML
-    private Label label20 = new Label();
+    private TextField text11 = new TextField();
     @FXML
-    private Label label21 = new Label();
+    private TextField text12 = new TextField();
     @FXML
-    private Label label22 = new Label();
+    private TextField text13 = new TextField();
     @FXML
-    private Label label23 = new Label();
+    private TextField text14 = new TextField();
     @FXML
-    private Label label24 = new Label();
+    private TextField text15 = new TextField();
     @FXML
-    private Label label30 = new Label();
+    private TextField text16 = new TextField();
     @FXML
-    private Label label31 = new Label();
+    private TextField text17 = new TextField();
     @FXML
-    private Label label32 = new Label();
+    private TextField text18 = new TextField();
     @FXML
-    private Label label33 = new Label();
+    private TextField text19 = new TextField();
     @FXML
-    private Label label34 = new Label();
+    private TextField text20 = new TextField();
     @FXML
-    private Label label40 = new Label();
+    private TextField text21 = new TextField();
     @FXML
-    private Label label41 = new Label();
+    private TextField text22 = new TextField();
     @FXML
-    private Label label42 = new Label();
+    private TextField text23 = new TextField();
     @FXML
-    private Label label43 = new Label();
+    private TextField text24 = new TextField();
     @FXML
-    private Label label44 = new Label();
+    private TextField text25 = new TextField();
+    @FXML
+    private Label message = new Label();
 
     Wordle wordle = new WordleImplementation();
 
@@ -148,7 +160,7 @@ public class WordleController {
                     line_word += word.getText();
                 }
                 try {
-                    result = game.submitGuess(line_word);
+                    LetterResult[] result = game.submitGuess(line_word);
                     for(int i = 0;i<h.getChildren().size();i++) {
                         word = (TextField) h.getChildren().get(i);
                         word.setBackground(new Background(new BackgroundFill(getColor(result[i]), CornerRadii.EMPTY, Insets.EMPTY)));
@@ -164,7 +176,7 @@ public class WordleController {
                     line_word = "";
                 }
                 catch (IllegalWordException e){
-
+                    message.setText(e.getMessage());
                 }
 
             }
@@ -179,7 +191,12 @@ public class WordleController {
             playAgain.setVisible(true);
             yesButton.setVisible(true);
             noButton.setVisible(true);
-
+            if(wordle.isWin()){
+                message.setText("you win");
+            }
+            else{
+                message.setText("you lose");
+            }
 
         }
     }

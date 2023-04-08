@@ -1,10 +1,15 @@
 package edu.virginia.cs.gui;
 
+import edu.virginia.cs.wordle.LetterResult;
 import edu.virginia.cs.wordle.WordleImplementation;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 
@@ -19,7 +24,10 @@ public class WordleApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
+
     }
+
+
 
     public static void main(String[] args) {
         launch();
