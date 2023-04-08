@@ -178,6 +178,7 @@ public class WordleController {
                         word.setStyle("-fx-text-fill: white");
                         word.setBackground(new Background(new BackgroundFill(getColor(result[i]), CornerRadii.EMPTY, Insets.EMPTY)));
                         word.setDisable(true);
+                        //
                     }
                     hindex++;
                     tindex = 0;
@@ -238,7 +239,7 @@ public class WordleController {
                 message.setText("you win");
             }
             else{
-                message.setText("you lose");
+                message.setText("you lose, the correct word was " + wordle.getAnswer());
             }
 
         }
