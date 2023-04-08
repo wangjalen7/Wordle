@@ -72,7 +72,6 @@
       </children>
    </HBox>
     <Label prefHeight="17.0" prefWidth="665.0"/>
-    <Button fx:id="checkButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="52.0" text="check"/>
     <Label id="play_again" fx:id="playAgain" text="Play Again?" visible="false" />
     <Button id="play_again" fx:id="yesButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleYesButton" text="Yes" visible="false" />
     <Button id="play_again" fx:id="noButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleNoButton" text="No" visible="false" />

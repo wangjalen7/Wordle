@@ -61,6 +61,8 @@ public class WordleController {
     @FXML
     private HBox word4= new HBox();
     @FXML
+    private HBox word5= new HBox();
+    @FXML
     private Label welcomeText;
     @FXML
     private TextField text1 = new TextField();
@@ -113,8 +115,19 @@ public class WordleController {
     @FXML
     private TextField text25 = new TextField();
     @FXML
+    private TextField text26 = new TextField();
+    @FXML
+    private TextField text27 = new TextField();
+    @FXML
+    private TextField text28 = new TextField();
+    @FXML
+    private TextField text29 = new TextField();
+    @FXML
+    private TextField text30 = new TextField();
+    @FXML
     private Label message = new Label();
 
+    Wordle wordle = new WordleImplementation();
 
 
     @FXML
@@ -190,6 +203,36 @@ public class WordleController {
             playAgain.setVisible(true);
             yesButton.setVisible(true);
             noButton.setVisible(true);
+            text1.setDisable(true);
+            text2.setDisable(true);
+            text3.setDisable(true);
+            text4.setDisable(true);
+            text5.setDisable(true);
+            text6.setDisable(true);
+            text7.setDisable(true);
+            text8.setDisable(true);
+            text9.setDisable(true);
+            text10.setDisable(true);
+            text11.setDisable(true);
+            text12.setDisable(true);
+            text13.setDisable(true);
+            text14.setDisable(true);
+            text15.setDisable(true);
+            text16.setDisable(true);
+            text17.setDisable(true);
+            text18.setDisable(true);
+            text19.setDisable(true);
+            text20.setDisable(true);
+            text21.setDisable(true);
+            text22.setDisable(true);
+            text23.setDisable(true);
+            text24.setDisable(true);
+            text25.setDisable(true);
+            text26.setDisable(true);
+            text27.setDisable(true);
+            text28.setDisable(true);
+            text29.setDisable(true);
+            text30.setDisable(true);
             if(wordle.isWin()){
                 message.setText("you win");
             }
@@ -200,14 +243,88 @@ public class WordleController {
         }
     }
 
+    protected void resetTextFields(){
+        text1.clear();
+        text2.clear();
+        text3.clear();
+        text4.clear();
+        text5.clear();
+        text6.clear();
+        text7.clear();
+        text8.clear();
+        text9.clear();
+        text10.clear();
+        text11.clear();
+        text12.clear();
+        text13.clear();
+        text14.clear();
+        text15.clear();
+        text16.clear();
+        text17.clear();
+        text18.clear();
+        text19.clear();
+        text20.clear();
+        text21.clear();
+        text22.clear();
+        text23.clear();
+        text24.clear();
+        text25.clear();
+        text26.clear();
+        text27.clear();
+        text28.clear();
+        text29.clear();
+        text30.clear();
+    }
+
+    protected void resetBackgroundColors(){
+        text1.setStyle("");
+        text2.setStyle("");
+        text3.setStyle("");
+        text4.setStyle("");
+        text5.setStyle("");
+        text6.setStyle("");
+        text7.setStyle("");
+        text8.setStyle("");
+        text9.setStyle("");
+        text10.setStyle("");
+        text11.setStyle("");
+        text12.setStyle("");
+        text13.setStyle("");
+        text14.setStyle("");
+        text15.setStyle("");
+        text16.setStyle("");
+        text17.setStyle("");
+        text18.setStyle("");
+        text19.setStyle("");
+        text20.setStyle("");
+        text21.setStyle("");
+        text22.setStyle("");
+        text23.setStyle("");
+        text24.setStyle("");
+        text25.setStyle("");
+        text26.setStyle("");
+        text27.setStyle("");
+        text28.setStyle("");
+        text29.setStyle("");
+        text30.setStyle("");
+    }
+
     @FXML
     protected void handleYesButton() {
+        wordle = new WordleImplementation();
+        resetTextFields();
+        resetBackgroundColors();
 
+        text1.setDisable(false);
+        text1.requestFocus();
+        playAgain.setVisible(false);
+        noButton.setVisible(false);
+        yesButton.setVisible(false);
     }
 
     @FXML
     protected void handleNoButton() {
-
+        Platform.exit();
     }
 
     protected Color getColor(LetterResult lr) {
