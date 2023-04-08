@@ -4,6 +4,7 @@ import edu.virginia.cs.wordle.GuessResult;
 import edu.virginia.cs.wordle.IllegalWordException;
 import edu.virginia.cs.wordle.LetterResult;
 import edu.virginia.cs.wordle.WordleImplementation;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -39,9 +40,9 @@ public class WordleController {
 
     private String line_word = "";
 
-    private int[] arr = new int[]{6,1,5,2,3};
 
-    private LetterResult[] result = new LetterResult[5];
+
+
     @FXML
     private VBox root = new VBox();
 
@@ -127,7 +128,7 @@ public class WordleController {
     @FXML
     private Label message = new Label();
 
-    Wordle wordle = new WordleImplementation();
+
 
 
     @FXML
@@ -326,7 +327,7 @@ public class WordleController {
     protected void handleNoButton() {
         Platform.exit();
     }
-
+    @FXML
     protected Color getColor(LetterResult lr) {
         if(lr.equals(LetterResult.GRAY))
             return Color.GRAY;
