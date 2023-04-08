@@ -4,6 +4,7 @@ import edu.virginia.cs.wordle.GuessResult;
 import edu.virginia.cs.wordle.IllegalWordException;
 import edu.virginia.cs.wordle.LetterResult;
 import edu.virginia.cs.wordle.WordleImplementation;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -25,7 +26,6 @@ public class WordleController {
 
     public WordleImplementation game = new WordleImplementation();
     public WordleImplementation wordle = new WordleImplementation();
-    GuessResult result = new GuessResult();
     @FXML
     public Label playAgain = new Label() ;
     @FXML
@@ -127,7 +127,7 @@ public class WordleController {
     @FXML
     private Label message = new Label();
 
-    Wordle wordle = new WordleImplementation();
+//    Wordle wordle = new WordleImplementation();
 
 
     @FXML
@@ -175,6 +175,7 @@ public class WordleController {
                     LetterResult[] result = game.submitGuess(line_word);
                     for(int i = 0;i<h.getChildren().size();i++) {
                         word = (TextField) h.getChildren().get(i);
+                        word.setStyle("-fx-text-fill: white");
                         word.setBackground(new Background(new BackgroundFill(getColor(result[i]), CornerRadii.EMPTY, Insets.EMPTY)));
                         word.setDisable(true);
                     }
@@ -328,12 +329,15 @@ public class WordleController {
     }
 
     protected Color getColor(LetterResult lr) {
+        Color green = Color.rgb(0,255,0);
+        Color gray = Color.rgb(128,128,128);
+        Color yellow = Color.rgb(204,204,0);
         if(lr.equals(LetterResult.GRAY))
-            return Color.GRAY;
+            return gray;
         if(lr.equals(LetterResult.YELLOW))
-            return Color.YELLOW;
+            return yellow;
         else
-            return Color.GREEN;
+            return green;
     }
 }
 
