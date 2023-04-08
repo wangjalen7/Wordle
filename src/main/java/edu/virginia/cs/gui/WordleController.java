@@ -9,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -29,7 +28,6 @@ public class WordleController {
     @FXML
     public Label playAgain = new Label() ;
     @FXML
-    private Button checkButton = new Button();
     public Button yesButton = new Button();
     public Button noButton = new Button();
 
@@ -47,7 +45,6 @@ public class WordleController {
 
     private HBox h = new HBox();
 
-
     @FXML
     private TextField word = new TextField();
     @FXML
@@ -62,8 +59,7 @@ public class WordleController {
     private HBox word4= new HBox();
     @FXML
     private HBox word5= new HBox();
-    @FXML
-    private Label welcomeText;
+
     @FXML
     private TextField text1 = new TextField();
     @FXML
@@ -126,9 +122,6 @@ public class WordleController {
     private TextField text30 = new TextField();
     @FXML
     private Label message = new Label();
-
-//    Wordle wordle = new WordleImplementation();
-
 
     @FXML
     protected void onHelloButtonClick() {
@@ -193,8 +186,6 @@ public class WordleController {
                 }
 
             }
-
-
         }
     }
 
