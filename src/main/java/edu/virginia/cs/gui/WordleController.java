@@ -40,9 +40,9 @@ public class WordleController {
 
     private String line_word = "";
 
+    private int[] arr = new int[]{6,1,5,2,3};
 
-
-
+    private LetterResult[] result = new LetterResult[5];
     @FXML
     private VBox root = new VBox();
 
@@ -327,14 +327,17 @@ public class WordleController {
     protected void handleNoButton() {
         Platform.exit();
     }
-    @FXML
+
     protected Color getColor(LetterResult lr) {
+        Color green = Color.rgb(0,255,0);
+        Color gray = Color.rgb(128,128,128);
+        Color yellow = Color.rgb(204,204,0);
         if(lr.equals(LetterResult.GRAY))
-            return Color.GRAY;
+            return gray;
         if(lr.equals(LetterResult.YELLOW))
-            return Color.YELLOW;
+            return yellow;
         else
-            return Color.GREEN;
+            return green;
     }
 }
 
