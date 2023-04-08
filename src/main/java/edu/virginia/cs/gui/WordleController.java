@@ -186,6 +186,7 @@ public class WordleController {
                     message.setText(e.getMessage());
                 }
             }
+            line_word = "";
         }
     }
 
