@@ -115,7 +115,6 @@ public class WordleController {
     @FXML
     private Label message = new Label();
 
-    Wordle wordle = new WordleImplementation();
 
 
     @FXML
@@ -203,6 +202,7 @@ public class WordleController {
 
     @FXML
     protected void handleYesButton() {
+
     }
 
     @FXML
