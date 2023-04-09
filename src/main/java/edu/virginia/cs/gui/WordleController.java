@@ -160,6 +160,7 @@ public class WordleController {
             word.requestFocus();
         }
         if(event.getCode().equals(KeyCode.ENTER)){
+            message.setText("");
             h = (HBox) root.getChildren().get(hindex);
             if(tindex == 4) {
                 for (int i = 0; i < h.getChildren().size(); i++) {
@@ -179,6 +180,7 @@ public class WordleController {
                     tindex = 0;
                     h = (HBox) root.getChildren().get(hindex);
                     word = (TextField) h.getChildren().get(tindex);
+
                     word.requestFocus();
                     word.clear();
                     line_word = "";
