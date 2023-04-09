@@ -159,29 +159,15 @@ public class WordleController {
                         word.setBackground(new Background(new BackgroundFill(getColor(result[i]), CornerRadii.EMPTY, Insets.EMPTY)));
                         word.setDisable(true);
                     }
-                    if(game.isGameOver()) {
-                        if(game.isWin()){
+                    gameOver();
 
-                            message.setText("You Win!");
-                            message.setVisible(true);
-                            gameOver();
-                        }
-
-                        if (game.isLoss()){
-
-                            message.setText("You Lose! The word was " + game.getAnswer() + ".");
-                            message.setVisible(true);
-                            gameOver();
-                        }
-                    }
-                    else {
                         hindex++;
                         tindex = 0;
                         h = (HBox) root.getChildren().get(hindex);
                         word = (TextField) h.getChildren().get(tindex);
                         word.requestFocus();
                         word.clear();
-                    }
+
                 } catch (IllegalWordException e) {
                     message.setText(e.getMessage());
                     message.setVisible(true);
@@ -228,6 +214,19 @@ public class WordleController {
             text29.setDisable(true);
             text30.setDisable(true);
             root.requestFocus();
+            if(game.isWin()){
+
+                message.setText("You Win!");
+                message.setVisible(true);
+                gameOver();
+            }
+
+            if (game.isLoss()){
+
+                message.setText("You Lose! The word was " + game.getAnswer() + ".");
+                message.setVisible(true);
+                gameOver();
+            }
         }
     }
 
@@ -303,7 +302,7 @@ public class WordleController {
         resetTextFields();
         resetBackgroundColors();
 
-        text1.setDisable(false);
+//        text1.setDisable(false);
         text1.requestFocus();
         playAgain.setVisible(false);
         noButton.setVisible(false);
