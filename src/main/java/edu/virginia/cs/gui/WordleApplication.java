@@ -23,8 +23,6 @@ public class WordleApplication extends Application {
         stage.setTitle("Wordle!");
         stage.setScene(scene);
         stage.show();
-
-
     }
 
 
