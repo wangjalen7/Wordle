@@ -141,7 +141,6 @@ public class WordleController {
             h = (HBox) root.getChildren().get(hindex);
             word = (TextField) h.getChildren().get(tindex);
             word.setText(event.getText());
-            word.setStyle("text-area-background: green;");
             if(tindex < 4)
                 tindex++;
             word.requestFocus();
@@ -233,14 +232,12 @@ public class WordleController {
 
                 message.setText("You Win!");
                 message.setVisible(true);
-                gameOver();
             }
 
             if (game.isLoss()){
 
                 message.setText("You Lose! The word was " + game.getAnswer() + ".");
                 message.setVisible(true);
-                gameOver();
             }
         }
     }
@@ -279,36 +276,36 @@ public class WordleController {
     }
 
     protected void resetBackgroundColors(){
-        text1.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text2.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));;
-        text3.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));;
-        text4.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));;
-        text5.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text6.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text7.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text8.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text9.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text10.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text11.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text12.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text13.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text14.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text15.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text16.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text17.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text18.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text19.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text20.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text21.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text22.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text23.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text24.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text25.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text26.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text27.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text28.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text29.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-        text30.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
+        text1.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text2.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text3.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text4.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text5.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text6.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text7.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text8.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text9.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text10.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text11.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text12.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text13.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text14.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text15.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text16.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text17.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text18.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text19.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text20.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text21.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text22.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text23.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text24.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text25.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text26.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text27.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text28.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text29.setStyle("-fx-background-color: white; -fx-border-color: black");
+        text30.setStyle("-fx-background-color: white; -fx-border-color: black");
     }
 
     @FXML
@@ -326,15 +323,17 @@ public class WordleController {
         game = new WordleImplementation();
         resetTextFields();
         resetBackgroundColors();
-        reEnable();
-        ChangeWordColor();
-//        text1.setDisable(false);
-        text1.requestFocus();
-        hindex = 1;
-        tindex = 0;
         playAgain.setVisible(false);
         noButton.setVisible(false);
         yesButton.setVisible(false);
+        message.setText("");
+        reEnable();
+        //ChangeWordColor();
+        hindex = 1;
+        tindex = 0;
+        HBox h = (HBox) root.getChildren().get(hindex);
+        TextField word = (TextField) h.getChildren().get(tindex);
+        word.requestFocus();
 
     }
     @FXML
