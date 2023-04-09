@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox fx:id="root" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="571.0" prefWidth="799.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.virginia.cs.gui.WordleController">
+<VBox fx:id="root" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="571.0" prefWidth="799.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.virginia.cs.gui.WordleController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -16,7 +19,10 @@
    </Label>
    <HBox fx:id="word0" prefHeight="100.0" prefWidth="200.0">
       <children>
-         <TextField fx:id="text1" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
+         <TextField fx:id="text1" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;">
+            <font>
+               <Font size="24.0" />
+            </font></TextField>
          <TextField fx:id="text2" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
          <TextField fx:id="text3" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
          <TextField fx:id="text4" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
@@ -25,7 +31,10 @@
    </HBox>
    <HBox fx:id="word1" prefHeight="100.0" prefWidth="200.0">
       <children>
-         <TextField fx:id="text6" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
+         <TextField fx:id="text6" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;">
+            <font>
+               <Font size="24.0" />
+            </font></TextField>
          <TextField fx:id="text7" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
          <TextField fx:id="text8" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
          <TextField fx:id="text9" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
@@ -34,7 +43,10 @@
    </HBox>
    <HBox fx:id="word2" prefHeight="100.0" prefWidth="200.0">
       <children>
-         <TextField fx:id="text11" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
+         <TextField fx:id="text11" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;">
+            <font>
+               <Font size="24.0" />
+            </font></TextField>
          <TextField fx:id="text12" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
          <TextField fx:id="text13" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
          <TextField fx:id="text14" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
@@ -43,7 +55,10 @@
    </HBox>
    <HBox fx:id="word3" prefHeight="100.0" prefWidth="200.0">
       <children>
-         <TextField fx:id="text16" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
+         <TextField fx:id="text16" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;">
+            <font>
+               <Font size="24.0" />
+            </font></TextField>
          <TextField fx:id="text17" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
          <TextField fx:id="text18" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
          <TextField fx:id="text19" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
@@ -52,7 +67,10 @@
    </HBox>
    <HBox fx:id="word4" prefHeight="100.0" prefWidth="200.0">
       <children>
-         <TextField fx:id="text21" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
+         <TextField fx:id="text21" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;">
+            <font>
+               <Font size="24.0" />
+            </font></TextField>
          <TextField fx:id="text22" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
          <TextField fx:id="text23" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
          <TextField fx:id="text24" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
@@ -61,7 +79,10 @@
    </HBox>
    <HBox fx:id="word5" prefHeight="100.0" prefWidth="200.0">
       <children>
-          <TextField fx:id="text26" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
+          <TextField fx:id="text26" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;">
+            <font>
+               <Font size="24.0" />
+            </font></TextField>
           <TextField fx:id="text27" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
           <TextField fx:id="text28" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />
           <TextField fx:id="text29" alignment="CENTER" onKeyPressed="#onButtonPressed" prefHeight="101.0" prefWidth="147.0" style="-fx-border-color: black;" />

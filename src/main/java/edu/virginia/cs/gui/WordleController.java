@@ -20,19 +20,31 @@ import java.security.Key;
 
 public class WordleController {
 
-    Wordle game = new WordleImplementation();
+    public WordleImplementation game = new WordleImplementation();
+    public WordleImplementation wordle = new WordleImplementation();
+
     @FXML
     public Label playAgain = new Label() ;
+    @FXML
+    private Button checkButton = new Button();
     public Button yesButton = new Button();
     public Button noButton = new Button();
+
     private int hindex = 1;
+
     private int tindex = 0;
+
     private String line_word = "";
+
     private int[] arr = new int[]{6,1,5,2,3};
+
     private LetterResult[] result = new LetterResult[5];
     @FXML
     private VBox root = new VBox();
+
     private HBox h = new HBox();
+
+
     @FXML
     private TextField word = new TextField();
     @FXML
@@ -144,7 +156,6 @@ public class WordleController {
             word.requestFocus();
         }
         if(event.getCode().equals(KeyCode.ENTER)){
-            message.setVisible(false);
             h = (HBox) root.getChildren().get(hindex);
             if(tindex == 4) {
                 for (int i = 0; i < h.getChildren().size(); i++) {
@@ -158,6 +169,7 @@ public class WordleController {
                         word.setStyle("-fx-text-fill: white");
                         word.setBackground(new Background(new BackgroundFill(getColor(result[i]), CornerRadii.EMPTY, Insets.EMPTY)));
                         word.setDisable(true);
+                        //
                     }
                     gameOver();
 
