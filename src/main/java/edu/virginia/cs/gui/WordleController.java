@@ -1,9 +1,6 @@
 package edu.virginia.cs.gui;
 
-import edu.virginia.cs.wordle.GuessResult;
-import edu.virginia.cs.wordle.IllegalWordException;
-import edu.virginia.cs.wordle.LetterResult;
-import edu.virginia.cs.wordle.WordleImplementation;
+import edu.virginia.cs.wordle.*;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -126,8 +123,7 @@ public class WordleController {
     private TextField text30 = new TextField();
     @FXML
     private Label message = new Label();
-
-
+    private Label winorlose = new Label();
 
 
     @FXML
@@ -160,7 +156,6 @@ public class WordleController {
             word.requestFocus();
         }
         if(event.getCode().equals(KeyCode.ENTER)){
-            message.setText("");
             h = (HBox) root.getChildren().get(hindex);
             if(tindex == 4) {
                 for (int i = 0; i < h.getChildren().size(); i++) {
@@ -176,24 +171,41 @@ public class WordleController {
                         word.setDisable(true);
                         //
                     }
-                    hindex++;
-                    tindex = 0;
-                    h = (HBox) root.getChildren().get(hindex);
-                    word = (TextField) h.getChildren().get(tindex);
+                    if(game.isGameOver()) {
+                        if(game.isWin()){
 
-                    word.requestFocus();
-                    word.clear();
-                    line_word = "";
+                            message.setText("You Win!");
+                            message.setVisible(true);
+                            gameOver();
+                        }
+
+                        if (game.isLoss()){
+
+                            message.setText("You Lose! The word was " + game.getAnswer() + ".");
+                            message.setVisible(true);
+                            gameOver();
+                        }
+                    }
+                    else {
+                        hindex++;
+                        tindex = 0;
+                        h = (HBox) root.getChildren().get(hindex);
+                        word = (TextField) h.getChildren().get(tindex);
+                        word.requestFocus();
+                        word.clear();
+                    }
                 } catch (IllegalWordException e) {
                     message.setText(e.getMessage());
+                    message.setVisible(true);
                 }
             }
+            line_word = "";
         }
     }
 
     @FXML
     protected void gameOver(){
-        if(wordle.isGameOver()){
+        if(game.isGameOver()){
             playAgain.setVisible(true);
             yesButton.setVisible(true);
             noButton.setVisible(true);
@@ -227,13 +239,7 @@ public class WordleController {
             text28.setDisable(true);
             text29.setDisable(true);
             text30.setDisable(true);
-            if(wordle.isWin()){
-                message.setText("you win");
-            }
-            else{
-                message.setText("you lose, the correct word was " + wordle.getAnswer());
-            }
-
+            root.requestFocus();
         }
     }
 
@@ -305,7 +311,7 @@ public class WordleController {
 
     @FXML
     protected void handleYesButton() {
-        wordle = new WordleImplementation();
+        game = new WordleImplementation();
         resetTextFields();
         resetBackgroundColors();
 
