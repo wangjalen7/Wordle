@@ -160,6 +160,7 @@ public class WordleController {
             word.requestFocus();
         }
         if(event.getCode().equals(KeyCode.ENTER)){
+            message.setVisible(false);
             h = (HBox) root.getChildren().get(hindex);
             if(tindex == 4) {
                 for (int i = 0; i < h.getChildren().size(); i++) {
@@ -190,6 +191,7 @@ public class WordleController {
                     }
                 } catch (IllegalWordException e) {
                     message.setText(e.getMessage());
+                    message.setVisible(true);
                 }
             }
             line_word = "";
