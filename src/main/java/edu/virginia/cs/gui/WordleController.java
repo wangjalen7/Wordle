@@ -175,14 +175,12 @@ public class WordleController {
                         //
                     }
                     gameOver();
-
-                        hindex++;
-                        tindex = 0;
-                        h = (HBox) root.getChildren().get(hindex);
-                        word = (TextField) h.getChildren().get(tindex);
-                        word.requestFocus();
-                        word.clear();
-
+                    hindex++;
+                    tindex = 0;
+                    h = (HBox) root.getChildren().get(hindex);
+                    word = (TextField) h.getChildren().get(tindex);
+                    word.requestFocus();
+                    word.clear();
                 } catch (IllegalWordException e) {
                     message.setText(e.getMessage());
                     message.setVisible(true);
@@ -230,13 +228,11 @@ public class WordleController {
             text30.setDisable(true);
             root.requestFocus();
             if(game.isWin()){
-
                 message.setText("You Win!");
                 message.setVisible(true);
             }
 
             if (game.isLoss()){
-
                 message.setText("You Lose! The word was " + game.getAnswer() + ".");
                 message.setVisible(true);
             }
@@ -329,7 +325,7 @@ public class WordleController {
         yesButton.setVisible(false);
         message.setText("");
         reEnable();
-        //ChangeWordColor();
+        //ChangeWordColor(); don't need
         hindex = 1;
         tindex = 0;
         HBox h = (HBox) root.getChildren().get(hindex);
