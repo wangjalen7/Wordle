@@ -175,13 +175,19 @@ public class WordleController {
                         word.setDisable(true);
                         //
                     }
-                    hindex++;
-                    tindex = 0;
-                    h = (HBox) root.getChildren().get(hindex);
-                    word = (TextField) h.getChildren().get(tindex);
-                    word.requestFocus();
-                    word.clear();
-                    line_word = "";
+                    if(game.isGameOver()) {
+                        gameOver();
+                        System.out.println("done");
+                    }
+                    else {
+                        hindex++;
+                        tindex = 0;
+                        h = (HBox) root.getChildren().get(hindex);
+                        word = (TextField) h.getChildren().get(tindex);
+                        word.requestFocus();
+                        word.clear();
+                        line_word = "";
+                    }
                 } catch (IllegalWordException e) {
                     message.setText(e.getMessage());
                 }
@@ -192,7 +198,7 @@ public class WordleController {
 
     @FXML
     protected void gameOver(){
-        if(wordle.isGameOver()){
+        if(game.isGameOver()){
             playAgain.setVisible(true);
             yesButton.setVisible(true);
             noButton.setVisible(true);
@@ -226,7 +232,8 @@ public class WordleController {
             text28.setDisable(true);
             text29.setDisable(true);
             text30.setDisable(true);
-            if(wordle.isWin()){
+            root.requestFocus();
+            if(game.isWin()){
                 message.setText("you win");
             }
             else{
