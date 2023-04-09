@@ -136,6 +136,7 @@ public class WordleController {
 
     @FXML
     protected void onButtonPressed(KeyEvent event){
+        message.setVisible(false);
         if(event.getCode().isLetterKey()){
             //System.out.println(event.getCode() + " " + root.getChildren().get(1));
             h = (HBox) root.getChildren().get(hindex);
