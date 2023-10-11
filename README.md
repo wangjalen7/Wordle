@@ -1,6 +1,6 @@
 Wordle GUI
 
-## Authors
+Authors
 * Jalen Wang 
 * Ethan Christian
 * Clark Pagels
