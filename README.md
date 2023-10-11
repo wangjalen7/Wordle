@@ -39,7 +39,7 @@ Implemented a GUI for a completed command line UI Wordle Game using JavaFX
   * `GuessResultTest` - tests for GuessResult
   * `WordleDictionaryTest` - tests for WordleDictionary
 
-## A Note about DefaultDictionaryFactory
+# A Note about DefaultDictionaryFactory
 This class is used to create "default" dictionaries for Wordle. It has two public functions:
 * `getDefaultGuessesDictionary()` - Get the default "acceptable guesses" dictionary. 
   * This dictionary in theory contains all five letter words in the English language. Many of these words are obscure, and so it's not suitable to use this dictionary to generate random answers. For instance, it contains words like: _aahed_, _zunis_, _tares_, and _ergot_.
