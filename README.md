@@ -1,7 +1,11 @@
 Wordle GUI
 
-High-Level Overview
+## Authors
+* Jalen Wang 
+* Ethan Christian
+* Clark Pagels
 
+High-Level Overview
 * **Main Class:** 
   * `CommandLineWordle` - "System test" class.
 * **Core Functionality Classes:**
