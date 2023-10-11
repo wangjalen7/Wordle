@@ -1,11 +1,14 @@
-Wordle GUI
+## Wordle GUI
 
-Authors
+# Authors
 * Jalen Wang 
 * Ethan Christian
 * Clark Pagels
 
-High-Level Overview
+# High-Level Overview
+
+Implemented a GUI for a completed command line UI Wordle Game using JavaFX
+
 * **Main Class:** 
   * `CommandLineWordle` - "System test" class.
 * **Core Functionality Classes:**
